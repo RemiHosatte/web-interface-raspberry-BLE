@@ -39,6 +39,11 @@ padding-top: 10px;
 display: inline-block;
 text-align: center;
 }
+.titleBLE2 {
+font-size: 30px;
+display: inline-block;
+text-align: center;
+}
 .button:hover
 {
   background-color:#303650;
@@ -61,7 +66,8 @@ background-color:#541919;
 }
 #restartButton
 {
-  width: 100%;
+  width: 106%;
+  margin-bottom: 10px;
 }
 .buttonDiv
 {

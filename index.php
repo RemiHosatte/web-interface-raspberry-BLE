@@ -12,7 +12,19 @@
   if (isset($_POST['scan']))
   {
     $devices = json_decode(shell_exec('sudo python scannerBLE.py'), true);
-
+  }
+  if (isset($_POST['restart']))
+  {
+   shell_exec('sudo service bluetooth restart');
+  }
+  if (isset($_POST['stop'])) {
+   shell_exec('sudo pkill -f notificationBLE_HM-10.py');
+  }
+  if (isset($_POST['hciup'])) {
+   shell_exec('sudo hciconfig hci0 up');
+  }
+  if (isset($_POST['hcidown'])) {
+   shell_exec('sudo hciconfig hci0 down');
   }
   ?>
   <div class="containerPerso">
@@ -63,6 +75,12 @@
       <form  method="post" action="index.php">
       <input id="restartButton" class="button" type="submit" name="restart" value="RESTART SERVICE">
       </form>
+      <form  method="post" action="index.php">
+      <input id="restartButton" class="button" type="submit" name="hciup" value="HCICONFIG UP">
+      </form>
+      <form  method="post" action="index.php">
+      <input id="restartButton" class="button" type="submit" name="hcidown" value="HCICONFIG DOWN">
+      </form>
     </div>
   </div>
 </body>
@@ -84,9 +102,7 @@ function updateValue(data)
 if (isset($_POST['start'])) {
   liveExecuteCommand("sudo python notificationBLE_HeartRateSensor.py d2:60:3e:1a:d2:e6");
   }
-if (isset($_POST['stop'])) {
- liveExecuteCommand("sudo pkill -f notificationBLE_HM-10.py");
-}
+
   ?>
 <?php
 
