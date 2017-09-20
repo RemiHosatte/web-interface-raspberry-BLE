@@ -11,7 +11,7 @@
   //Scah container
   if (isset($_POST['scan']))
   {
-    $devices = json_decode(shell_exec('sudo python scannerBLE.py'), true);
+    $devices = json_decode(shell_exec('sudo python /var/www/html/web-interface/scannerBLE.py'), true);
   }
   if (isset($_POST['restart']))
   {

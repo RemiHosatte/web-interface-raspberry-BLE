@@ -6,5 +6,6 @@
 * Install bluepy with pip
 Follow these instructions: https://github.com/IanHarvey/bluepy
 * Install apache
+<br />`<addr>`	www-data ALL=(ALL) NOPASSWD: ALL
 * Give root access apache user name
 * Copy these files to www repertory
