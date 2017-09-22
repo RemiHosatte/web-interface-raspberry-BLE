@@ -5,7 +5,8 @@
 <br /> Follow these instructions: https://codeyarns.com/2017/06/05/how-to-build-and-install-bluez/
 * Install bluepy with pip
 Follow these instructions: https://github.com/IanHarvey/bluepy
-* Install apache
-<br />`<addr>`	www-data ALL=(ALL) NOPASSWD: ALL
+* Install apache in not installed
 * Give root access apache user name
+<br />Open sudoers file with -> `sudo visudo` command
+<br />Add `www-data ALL=(ALL) NOPASSWD: ALL` under `#includedir /etc/sudoers.d`
 * Copy these files to www repertory
