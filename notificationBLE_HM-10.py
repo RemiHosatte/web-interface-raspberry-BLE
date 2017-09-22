@@ -11,7 +11,7 @@ except IndexError:
    sys.exit()
 
 
-handleObj =  18
+handleObj =  19
 
 def notificationHM10(cHandle, data):
     #Creates JSON for export
@@ -27,6 +27,7 @@ except BTLEException:
     time.sleep(1)
     p.connect(adresseObj)
 
+#The HM10 can already have activated notifications (AT-COMMANDS)
 
 p.writeCharacteristic(handleObj, '\1\0') #Activate notifications
 p.delegate.handleNotification = notificationHM10 #Assigns notifications to "notificationSensor" function
